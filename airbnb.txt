@@ -1,0 +1,19 @@
+# queries
+
+- 1: db.airbnb.find({$or:[{'address.country_code':'BR'},{'address.country_code':'CA'}]})
+
+- 2: db.airbnb.find({$and:[{'address.country_code':'BR'},{'review_scores.review_scores_rating':{$gt:95}}]})
+
+- 3:  db.airbnb.find({$and:[{$or:[{'address.country_code':'BR'},{'address.country_code':'CA'}]},{'review_scores.review_scores_rating':99}]})
+
+- 4: db.airbnb.find({$or:[{$and:[{'address.country_code':'US'},{'review_scores.review_scores_rating':95}]},{$and:[{'address.country_code':'CA'},{'review_scores.review_scores_rating':99}]}]})
+
+- 5a:  db.airbnb.find({$or:[{'amenities':{$size:5}},{'amenities':{$size:6}},{'amenities':{$size:7}},{'amenities':{$size:8}},{'amenities':{$size:9}},{'amenities':{$size:10}}]},{amenities:1})
+
+- 5b: db.airbnb.find({$or:[{'amenities':{$size:5}},{'amenities':{$size:4}}]},{amenities:1})
+
+- 5c: db.airbnb.find({'reviews.reviewer_name':'Shelley','reviews.reviewer_id': '9622861'})
+
+- 5d: db.airbnb.find({'reviews.reviewer_name':'Shelley','reviews.reviewer_id': '9622861'},{reviews:{$elemMatch:{'reviewer_name':'Shelley','reviewer_id': '9622861'}}})
+
+- 6  db.airbnb.find({$and:[{'address.market':'New York'},{amenities:{$all:['Wifi','TV','Breakfast','Iron']}}]}).sort({'review_scores.review_scores_rating':-1}).limit(10)
