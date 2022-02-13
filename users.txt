@@ -1,0 +1,23 @@
+# Queries:
+
+- use assignment
+
+- db.users.insertOne({first_name:'Abhinav',last_name:'Sharma',email:'abhinav@masai.school',gender:'male',ip_address:"159.7.153.180",age:22})
+
+- db.users.insertMany([{first_name:'Abhay',last_name:'Khare',email:'abhay@masai.school',gender:'male',ip_address:"192.168.5.125",age:23},{first_name:'Ayush',last_name:'Sharma',email:'ayush@masai.school',gender:'male',ip_address:"123.241.6.185",age:22},{first_name:'Asmita',last_name:'Dogra',email:'asmita@gmail.com',gender:'female',ip_address:"143.128.6.147",age:22},{first_name:'Payoosni',last_name:'Singh',email:'payoosni@gmail.com',gender:'female',ip_address:"165.201.4.12",age:22},{first_name:'Shreya',last_name:'Dhone',email:'shreya@gmail.com',gender:'female',ip_address:"213.124.3.1",age:25},{first_name:'Anshul',last_name:'Sharma',email:'anshul@gmail.com',gender:'male',ip_address:"22.153.164.221",age:25},{first_name:'Dishant',last_name:'Rana',email:'dishant@gmail.com',gender:'male',ip_address:"123.212.32.1",age:23},{first_name:'Sahil',last_name:'Kapoor',email:'sahil@gmail.com',gender:'male',ip_address:"120.136.45.5",age:23},{first_name:'Pratyush',last_name:'Sharma',email:'pratyush@gmail.com',gender:'male',ip_address:"123.42.63.8",age:23}])
+
+- db.users.find({age:22})
+
+- db.users.findOne({age:22})
+
+- db.users.updateOne({first_name:'Payoosni'},{$inc:{age:2}})
+
+- db.users.updateOne({first_name:'Abhinav'},{$set:{email:abhinav.sharma@gmail.com}})
+
+- db.users.updateMany({age:22},{$inc:{age:1}})
+
+- db.users.deleteMany({age:23})
+
+- db.users.deleteOne({age:25})
+
+- db.dropDatabase()
