@@ -1,0 +1,15 @@
+# Queries
+
+- 1: db.items.find().sort({no_of_purchases:-1}).limit(10)
+
+- 2: db.items.find().sort({price:1}).limit(10)
+
+- 3: db.items.find().sort({qty_left:-1})
+
+- 4: db.items.find().sort({product_rating:-1}).limit(10) 
+
+- 5: db.items.find().sort({product_rating:1}).limit(10) 
+
+- 6: db.items.find().sort({product_rating:-1}).limit(10).skip(10)
+
+- 7: db.items.find({$and:[{product_rating:{$gte:3}},{product_rating:{$lte:4}}]}).sort({product_rating:-1,product_name:1})
